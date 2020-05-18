@@ -66,8 +66,16 @@ public class Calculator {
         if(operator == null) {
             throw new InvalidOperationException();
         }
+        double firstNumber = 0;
+        double secondNumber = 0;
+        try {
+            firstNumber = Double.parseDouble(firstNum.toString());
+            secondNumber = Double.parseDouble(secondNum.toString());
+        } catch(NumberFormatException e) {
+            throw new InvalidOperationException();
+        }
 
-        return new Operation(Double.parseDouble(firstNum.toString()), Double.parseDouble(secondNum.toString()), operator);
+        return new Operation(firstNumber, secondNumber, operator);
     }
 
     private class Operation {

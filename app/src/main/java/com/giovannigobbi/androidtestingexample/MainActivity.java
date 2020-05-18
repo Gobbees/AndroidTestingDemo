@@ -3,29 +3,52 @@ package com.giovannigobbi.androidtestingexample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText operation;
-    private TextView textView;
-    private Calculator calculator;
+    EditText operation;
+    TextView txtResult;
+    TextView txtLastResult;
+
+    Calculator calculator;
+
+    SharedPreferences sharedPreferences;
+
+    private String lastResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         operation = findViewById(R.id.editText);
-        textView = findViewById(R.id.txtResult);
+        txtResult = findViewById(R.id.txtResult);
+        txtResult.setText(getString(R.string.result, ""));
+        txtLastResult = findViewById(R.id.txtLastResult);
+        sharedPreferences = getSharedPreferences("MainActivity", Context.MODE_PRIVATE);
+        setLastResult();
         calculator = new Calculator();
         initButtons();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    private void setLastResult() {
+        lastResult = sharedPreferences.getString("lastResult", "");
+        txtLastResult.setText(getString(R.string.last_result, lastResult));
     }
 
     private void initButtons() {
@@ -51,19 +74,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String textOperation = operation.getText().toString();
-                operation.setText(textOperation.substring(0, textOperation.length() - 1));
+                if (textOperation.length() > 0) {
+                    operation.setText(textOperation.substring(0, textOperation.length() - 1));
+                }
             }
         });
 
         findViewById(R.id.btnEquals).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setText(calculator.calculate(operation.getText().toString()));
+                try {
+                    Double result = calculator.calculate(operation.getText().toString());
+                    setText(result);
+                    setLastResult();
+                    operation.setText("");
+                    lastResult = result.toString();
+                    sharedPreferences.edit().putString("lastResult", lastResult).commit();
+                } catch (InvalidOperationException ex) {
+                    showErrorToast();
+                }
             }
         });
     }
 
     private void setText(double result) {
-        textView.setText(getString(R.string.result, result + ""));
+        txtResult.setText(getString(R.string.result, result + ""));
+    }
+
+    private void showErrorToast() {
+        Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show();
     }
 }

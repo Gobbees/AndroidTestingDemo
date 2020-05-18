@@ -13,7 +13,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74">
 
         <TableRow
             android:layout_width="match_parent"
@@ -31,11 +32,10 @@
 
             <Button
                 android:id="@+id/btnDivivded"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/divide"
-                style="?android:attr/borderlessButtonStyle"
-                />
+                android:text="@string/divide" />
         </TableRow>
 
         <TableRow
@@ -44,31 +44,31 @@
 
             <Button
                 android:id="@+id/btn7"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_7"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_7" />
 
             <Button
                 android:id="@+id/btn8"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_8"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_8" />
 
             <Button
                 android:id="@+id/btn9"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_9"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_9" />
 
             <Button
                 android:id="@+id/btnTimes"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/times"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/times" />
 
         </TableRow>
 
@@ -78,31 +78,31 @@
 
             <Button
                 android:id="@+id/btn4"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_4"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_4" />
 
             <Button
                 android:id="@+id/btn5"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_5"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_5" />
 
             <Button
                 android:id="@+id/btn6"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_6"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_6" />
 
             <Button
                 android:id="@+id/btnMinus"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/minus"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/minus" />
 
         </TableRow>
 
@@ -112,31 +112,31 @@
 
             <Button
                 android:id="@+id/btn1"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_1"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_1" />
 
             <Button
                 android:id="@+id/btn2"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_2"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_2" />
 
             <Button
                 android:id="@+id/btn3"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_3"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_3" />
 
             <Button
                 android:id="@+id/btnPlus"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plus"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/plus" />
 
         </TableRow>
 
@@ -146,31 +146,31 @@
 
             <Button
                 android:id="@+id/btnDelete"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/del"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/del" />
 
             <Button
                 android:id="@+id/btn0"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/_0" />
 
             <Button
                 android:id="@+id/btnPoint"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/point"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/point" />
 
             <Button
                 android:id="@+id/btnEquals"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/equals"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:text="@string/equals" />
         </TableRow>
     </TableLayout>
 
@@ -179,8 +179,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="@+id/tableLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.65" />
+
+    <TextView
+        android:id="@+id/txtLastResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:text="@string/last_result"
+        app:layout_constraintBottom_toTopOf="@+id/txtResult"
+        app:layout_constraintStart_toStartOf="@+id/txtResult"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

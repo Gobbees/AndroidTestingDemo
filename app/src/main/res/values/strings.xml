@@ -19,4 +19,6 @@
     <string name="_9">9</string>
     <string name="equals">=</string>
     <string name="plus">+</string>
+    <string name="last_result">Last Result: %1$s</string>
+    <string name="toast_message">Invalid operation</string>
 </resources>
