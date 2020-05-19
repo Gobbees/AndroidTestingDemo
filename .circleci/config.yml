@@ -61,7 +61,9 @@ jobs:
               --type instrumentation \
               --app ./app/build/outputs/apk/debug/app-debug.apk \
               --test ./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk \
+              --device model=blueline,version=29,locale=en_US,orientation=portrait \
               --device model=blueline,version=28,locale=it_IT,orientation=portrait \
+              --device model=star2lte,version=28,locale=en_US,orientation=portrait \
               2>&1 | tee gcloud-output.txt
             echo "Extracting test results location..."
             cat gcloud-output.txt | grep "Raw results will be stored in your GCS bucket at \[https://console.developers.google.com/storage" | grep -o "\[.*\]" | sed 's/\[.*console.developers.google.com\/storage\/browser\/\(.*\)\/]/\1/' > test-results-location.txt
