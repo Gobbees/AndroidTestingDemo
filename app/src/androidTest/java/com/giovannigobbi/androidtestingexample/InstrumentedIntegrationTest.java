@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class InstrumentedUnitTest {
+public class InstrumentedIntegrationTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mainActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class) {
